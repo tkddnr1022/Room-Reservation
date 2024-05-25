@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>견우직녀</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/reserve.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-3.6.4.min.js"></script>
+		<script src="js/socket.io.min.js"></script>
+		<script src="js/load.js"></script>
+	</head>
+	<body>
+		<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+			
+			<div class="lds-ring" id="loading_bar"><div></div><div></div><div></div><div></div></div>
+			
+			<div class="card" id="page_login" style="display: none">
+				<form style="margin:20px">
+					<div class="mb-3">
+						<label for="exampleInputEmail1" class="form-label">이름</label>
+						<input type="textarea" class="form-control" placeholder="이름" id="input_id">
+					</div>
+					<div class="mb-3">
+						<label for="exampleInputPassword1" class="form-label">비밀번호</label>
+						<input type="password" class="form-control" placeholder="4자리" id="input_pw">
+					</div>
+					<div class="row">
+						<div class="col text-center">
+							<button type="button" class="btn btn-primary" id="btn_login">로그인</button>
+							<button type="button" class="btn btn-secondary">등록</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="page_reserve" style="display: none">
+				<div class="row">
+					<div class="col-4">
+						<button class="btn btn-primary" id="btn_reserve">신청</button>
+						<button class="btn btn-secondary" id="btn_logout">로그아웃</button>
+						
+					</div>
+					<div class="col-4">
+						<div id="alert_fail" class="alert alert-danger fade show" role="alert" style="display:none;">
+							신청 실패
+						</div>
+						<div id="alert_success" class="alert alert-primary fade show" role="alert" style="display:none;">
+							신청 성공
+						</div>
+						<div id="alert_duplicated" class="alert alert-warning fade show" role="alert" style="display:none;">
+							먼저 신청한 팀에 의해 시간 선택이 해제되었습니다
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-auto">
+						<table class="table table-bordered table-sm">
+							<thead>
+								<tr>
+									<th>시간</th>
+									<td>월</td>
+									<td>화</td>
+									<td>수</td>
+									<td>목</td>
+									<td>금</td>
+									<td>토</td>
+									<td>일</td>
+								</tr>
+							</thead>
+							<tbody id="timeline">
+							</tbody>
+						</table>
+					</div>
+					<div class="col-auto">
+						<ul class="list-group" id="teamlist"></ul>
+					</div>
+				</div>
+			</div>
+			
+	  </div>
+	</body>
+</html>
