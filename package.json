@@ -21,7 +21,7 @@
 		"mongoose": "^7.0.4",
 		"session.socket.io": "^0.2.1",
 		"socket.io": "^4.6.1",
-		"ws": "^8.13.0"
+		"ws": "^8.17.1"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.22"
